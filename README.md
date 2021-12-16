@@ -25,4 +25,4 @@
 <p>Working on implementing a Transformer model <a href="https://arxiv.org/pdf/1706.03762.pdf" target="blank">[A. Vaswani
         et al., 2017]</a></p>
 <h2>Lisence</h2>
-<p><a href="https://github.com/AgamChopra/MNIST/blob/master/LICENSE.md" target="blank">[The MIT License]</a></p>
+<p><a href="https://raw.githubusercontent.com/AgamChopra/MNIST/main/LICENSE?token=AFTUZ6KEH5IE4L4ZIZCCUF3BYTS6C" target="blank">[The MIT License]</a></p>
