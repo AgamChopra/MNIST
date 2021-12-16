@@ -77,11 +77,11 @@ Observations:
     Test(custom dataset) Accuracy: tensor(0.4600)
 '''
 #%%
-#10 Layvr NN with reg & dropout
+#3 Layvr DNN with reg & dropout
 model = models.NN3layer(dropout=0.5,device='cuda')
 losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)#100,1E-5,16
 models.plot_loss(losses,title='3 Layvr NN, w/ Reg&dropout')
-print('Dense NN 10 layers')
+print('Dense NN 3 layers')
 print('Test Accuracy:',models.accuracy(y,model.predict(x)))
 print('Evaluation/Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
 print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
@@ -95,17 +95,17 @@ Epoch 100 :
 Observations:
   
   Reported accuracy statistics:
-    Dense NN 10 layers
+    Dense NN 3 layers
     Test Accuracy: tensor(0.9821)
     Evaluation/Validation Accuracy: tensor(0.9768)
     Test(custom dataset) Accuracy: tensor(0.6600)
 '''
 #%%
-#10 layer FCNN with reg & dropout
+#3 layer CNN 3 + layer DNN reg & dropout
 model = models.CNN3NN3layer(dropout=0.5,device='cuda')
 losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)#100,1E-5,16
 models.plot_loss(losses,title='3 Layvr CNN + 3 layer NN, w/ Reg&dropout')
-print('FCNN 10 layers')
+print('3 layer CNN 3 + layer DNN')
 print('Test Accuracy:',models.accuracy(y,model.predict(x)))
 print('Evaluation/Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
 print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
@@ -119,9 +119,57 @@ Epoch 100 :
 Observations:
   
   Reported accuracy statistics:
-    FCNN 10 layers
+    3 layer CNN 3 + layer DNN
     Test Accuracy: tensor(0.9855)
     Evaluation/Validation Accuracy: tensor(0.9833)
     Test(custom dataset) Accuracy: tensor(0.8600)
+'''
+#%%
+#10 layer FCNN with reg & dropout
+model = models.CNN10(dropout=0.5,device='cuda')
+losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)#100,1E-5,16
+models.plot_loss(losses,title='10 layer FCNN, w/ Reg&dropout')
+print('FCNN 10 layers')
+print('Test Accuracy:',models.accuracy(y,model.predict(x)))
+print('Evaluation/Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
+print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
+'''
+Epoch 1 :
+      Training loss: 2.022997138977051 , Evaluation loss: 1.6752129124525266
+Epoch 50 :
+      Training loss: 1.508178492863973 , Evaluation loss: 1.4789460106537893
+Epoch 100 :
+      Training loss: 1.499118377304077 , Evaluation loss: 1.4755478910146616
+Observations:
+  
+  Reported accuracy statistics:
+    FCNN 10 layers
+    Test Accuracy: tensor(0.9869)
+    Evaluation/Validation Accuracy: tensor(0.9855)
+    Test(custom dataset) Accuracy: tensor(0.8400)
+'''
+#%%
+#10 Layvr NN with reg & dropout
+model = models.NN10layer(dropout=0.5,device='cuda')
+losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)#100,1E-5,16
+models.plot_loss(losses,title='Dense NN 10 layers, w/ Reg&dropout')
+print('Dense NN 10 layers')
+print('Test Accuracy:',models.accuracy(y[30000:],model.predict(x[30000:])))
+print('Evaluation/Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
+print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
+'''
+Epoch 1 :
+      Training loss: 2.3038975012461345 , Evaluation loss: 2.2993134390085173
+Epoch 50 :
+      Training loss: 1.7635783201853434 , Evaluation loss: 1.6921955935465984
+Epoch 100 :
+      Training loss: 1.6673925411224366 , Evaluation loss: 1.5521868937290633
+Observations:
+  The model is too complex to converge in 100 epochs...
+  Reported accuracy statistics:
+    Dense NN 10 layers
+    Test Accuracy: tensor(0.9036)
+    Evaluation/Validation Accuracy: tensor(0.9087)
+    Test(custom dataset) Accuracy: tensor(0.4400)
 '''
 #%%
