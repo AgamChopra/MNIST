@@ -10,15 +10,10 @@
 </ul>
 <p align="center">
     <img width="550" height="80" src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/stats.PNG?raw=true">
-    <br><i>Fig 1. Observed Accuracy.</i><br><br>
-    <img width="180" height="100"
+    <br><i>Fig 1. Observed Accuracy after 100 Iterations.</i><br><br>
+    <img width="280" height="200"
         src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/NN_1_neuron.png?raw=true">
-    <img width="180" height="100"
-        src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/NN_10_layers_500_neurons_per_hiddenlayer.png?raw=true">
-    <img width="180" height="100"
-        src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/FCNN_10_layers.png?raw=true">
-    <br><i>Fig 2. Loss Plots for Perceptron, 10 layer DenseNN, and 10 layer Fully Convolutional NN, in that
-        order.</i><br>
+    <br><i>Fig 2. Loss Plots for Perceptron</i><br>
 </p>
 
 <h2>Future Work</h2>
