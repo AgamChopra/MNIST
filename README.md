@@ -9,13 +9,13 @@
     <li><a href="https://github.com/AgamChopra/MNIST/tree/main/my_numbers">my_numbers</a>: File containing my handdrawn digits [0,9].
 </ul>
 <p align="center">
-    <img width="750" height="180" src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/stats.PNG?raw=true">
+    <img width="550" height="80" src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/stats.PNG?raw=true">
     <br><i>Fig 1. Observed Accuracy.</i><br><br>
-    <img width="280" height="200"
+    <img width="180" height="100"
         src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/NN_1_neuron.png?raw=true">
-    <img width="280" height="200"
+    <img width="180" height="100"
         src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/NN_10_layers_500_neurons_per_hiddenlayer.png?raw=true">
-    <img width="280" height="200"
+    <img width="180" height="100"
         src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/FCNN_10_layers.png?raw=true">
     <br><i>Fig 2. Loss Plots for Perceptron, 10 layer DenseNN, and 10 layer Fully Convolutional NN, in that
         order.</i><br>
