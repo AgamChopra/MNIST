@@ -3,7 +3,7 @@
 <ul>
     <li><a href="https://github.com/AgamChopra/MNIST/blob/main/my_dataset.py">my_dataset.py</a>: Contains functions to load MNIST dataset into numpy format, convert custom digits into MNIST
         format, and function to visualize dataset.
-        Download complete MNIST dataset at <a href="http://yann.lecun.com/exdb/mnist/" target="blank">here</a>.
+        Download complete MNIST dataset <a href="http://yann.lecun.com/exdb/mnist/" target="blank">here</a>.
     <li><a href="https://github.com/AgamChopra/MNIST/blob/main/models.py">models.py</a>: Cantains various custom ML models and helper functions.
     <li><a href="https://github.com/AgamChopra/MNIST/blob/main/main.py">main.py</a>: Executable file for training the models on the MNIST dataset.
     <li><a href="https://github.com/AgamChopra/MNIST/tree/main/my_numbers">my_numbers</a>: File containing my handdrawn digits [0,9].
