@@ -1,12 +1,12 @@
 <h1>MNIST</h1>
 <p>Project dependencies: PyTorch, Sklearn, Numpy, PIL, Matplotlib, and gzip.</p>
 <ul>
-    <li>my_dataset.py: Contains functions to load MNIST dataset into numpy format, convert custom digits into MNIST
+    <li><a href="https://github.com/AgamChopra/MNIST/blob/main/my_dataset.py">my_dataset.py</a>: Contains functions to load MNIST dataset into numpy format, convert custom digits into MNIST
         format, and function to visualize dataset.
         Download complete MNIST dataset at <a href="http://yann.lecun.com/exdb/mnist/" target="blank">here</a>.
-    <li>models.py: Cantains various custom ML models and helper functions.
-    <li>main.py: Executable file for training the models on the MNIST dataset.
-    <li>my_numbers: File containing my handdrawn digits [0,9].
+    <li><a href="https://github.com/AgamChopra/MNIST/blob/main/models.py">models.py</a>: Cantains various custom ML models and helper functions.
+    <li><a href="https://github.com/AgamChopra/MNIST/blob/main/main.py">main.py</a>: Executable file for training the models on the MNIST dataset.
+    <li><a href="https://github.com/AgamChopra/MNIST/tree/main/my_numbers">my_numbers</a>: File containing my handdrawn digits [0,9].
 </ul>
 <p align="center">
     <img width="750" height="180" src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/stats.PNG?raw=true">
