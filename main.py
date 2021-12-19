@@ -16,8 +16,8 @@ yt = vl[1]
 model = models.Logistic_Regression()
 model.fit(x, tr[1])
 print('LogisticRegression')
-print('Test Accuracy:',models.accuracy(y,model.predict(x)))
-print('Evaluation Accuracy:',models.accuracy(yv,model.predict(xv)))
+print('Train Accuracy:',models.accuracy(y,model.predict(x)))
+print('Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
 print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
 '''
 Observations:
@@ -33,8 +33,8 @@ Observations:
 model = models.SVM()
 model.fit(x, tr[1])
 print('SVM')
-print('Test Accuracy:',models.accuracy(y,model.predict(x)))
-print('Evaluation Accuracy:',models.accuracy(yv,model.predict(xv)))
+print('Train Accuracy:',models.accuracy(y,model.predict(x)))
+print('Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
 print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
 '''
 Observations:
@@ -58,8 +58,8 @@ model = models.NN1layer(device='cuda')
 losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)#100,1E-5,16
 models.plot_loss(losses,title='3 Layvr NN, w/ Reg&dropout')
 print('Dense NN 1 layers(perceptron)')
-print('Test Accuracy:',models.accuracy(y,model.predict(x)))
-print('Evaluation/Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
+print('Train Accuracy:',models.accuracy(y,model.predict(x)))
+print('Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
 print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
 '''
 Epoch 1 :
@@ -82,8 +82,8 @@ model = models.NN3layer(dropout=0.5,device='cuda')
 losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)#100,1E-5,16
 models.plot_loss(losses,title='3 Layvr NN, w/ Reg&dropout')
 print('Dense NN 3 layers')
-print('Test Accuracy:',models.accuracy(y,model.predict(x)))
-print('Evaluation/Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
+print('Train Accuracy:',models.accuracy(y,model.predict(x)))
+print('Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
 print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
 '''
 Epoch 1 :
@@ -106,8 +106,8 @@ model = models.CNN3NN3layer(dropout=0.5,device='cuda')
 losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)#100,1E-5,16
 models.plot_loss(losses,title='3 Layvr CNN + 3 layer NN, w/ Reg&dropout')
 print('3 layer CNN 3 + layer DNN')
-print('Test Accuracy:',models.accuracy(y,model.predict(x)))
-print('Evaluation/Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
+print('Train Accuracy:',models.accuracy(y,model.predict(x)))
+print('Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
 print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
 '''
 Epoch 1 :
@@ -130,8 +130,8 @@ model = models.CNN10(dropout=0.5,device='cuda')
 losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)#100,1E-5,16
 models.plot_loss(losses,title='10 layer FCNN, w/ Reg&dropout')
 print('FCNN 10 layers')
-print('Test Accuracy:',models.accuracy(y,model.predict(x)))
-print('Evaluation/Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
+print('Train Accuracy:',models.accuracy(y,model.predict(x)))
+print('Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
 print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
 '''
 Epoch 1 :
@@ -154,8 +154,8 @@ model = models.NN10layer(dropout=0.5,device='cuda')
 losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)#100,1E-5,16
 models.plot_loss(losses,title='Dense NN 10 layers, w/ Reg&dropout')
 print('Dense NN 10 layers')
-print('Test Accuracy:',models.accuracy(y[30000:],model.predict(x[30000:])))
-print('Evaluation/Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
+print('Train Accuracy:',models.accuracy(y[30000:],model.predict(x[30000:])))
+print('Validation Accuracy:',models.accuracy(yv,model.predict(xv)))
 print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
 '''
 Epoch 1 :
@@ -171,5 +171,38 @@ Observations:
     Test Accuracy: tensor(0.9036)
     Evaluation/Validation Accuracy: tensor(0.9087)
     Test(custom dataset) Accuracy: tensor(0.4400)
+'''
+#%%
+#10 layer Vison Transformer with reg & dropout
+model = models.VisionTransformer(dropout=0.5,device='cuda',depth=4)
+losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)
+models.plot_loss(losses,title='4 layer Vison Transformer, w/ Reg&dropout')
+print('4 layer Vison Transformer')
+k = 100
+a = []
+for i in range(0,x.shape[0]-k, k):
+     a.append(models.accuracy(y[i:i+k],model.predict(x[i:i+k])))
+a = sum(a)/len(a)
+print('Train Accuracy:',a)
+a = []
+for i in range(0,xv.shape[0]-k, k):
+     a.append(models.accuracy(yv[i:i+10],model.predict(xv[i:i+10])))
+a = sum(a)/len(a)
+print('Validation Accuracy:', a)
+print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
+'''
+Epoch 1 :
+      Training loss: 1.8944589164098105 , Evaluation loss: 1.7442543365252323
+Epoch 50 :
+      Training loss: 1.5390328121185304 , Evaluation loss: 1.527704186928578
+Epoch 100 :
+      Training loss: 1.5146786278406779 , Evaluation loss: 1.5147876407091434
+Observations:
+  The model is too complex to converge in 100 epochs...
+  Reported accuracy statistics:
+    4 layer Vison Transformer
+    Train Accuracy: tensor(0.9691)
+    Validation Accuracy: tensor(0.9515)
+    Test(custom dataset) Accuracy: tensor(0.3800)
 '''
 #%%
