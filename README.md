@@ -17,7 +17,7 @@
 </p>
 
 <h2>Future Work</h2>
-<p>Working on implementing a Transformer model <a href="https://arxiv.org/pdf/1706.03762.pdf" target="blank">[A. Vaswani
+<p><strike>Working on implementing a Transformer model </strike><a href="https://arxiv.org/pdf/1706.03762.pdf" target="blank">[A. Vaswani
         et al., 2017]</a></p>
 <h2>Lisence</h2>
 <p><a href="https://raw.githubusercontent.com/AgamChopra/MNIST/main/LICENSE?token=AFTUZ6KEH5IE4L4ZIZCCUF3BYTS6C" target="blank">[The MIT License]</a></p>
