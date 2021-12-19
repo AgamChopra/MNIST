@@ -17,7 +17,7 @@
 </p>
 
 <h2>Future Work</h2>
-<p><strike>Working on implementing a Transformer model </strike><a href="https://arxiv.org/pdf/1706.03762.pdf" target="blank">[A. Vaswani
+<p><strike>Implement a Vision Transformer model </strike><a href="https://arxiv.org/pdf/1706.03762.pdf" target="blank">[A. Vaswani
         et al., 2017]</a><a href="https://arxiv.org/pdf/2010.11929.pdf" target="blank">[A. Dosovitskiy et al., 2021]</a><br>
 Implement Focal Self-attention for Local-Global Interactions in Vision Transformers <a href="https://arxiv.org/pdf/2107.00641.pdf" target="blank">[J. Yang et al., 2021]</a></p>
 <h2>Lisence</h2>
