@@ -173,11 +173,11 @@ Observations:
     Test(custom dataset) Accuracy: tensor(0.4400)
 '''
 #%%
-#10 layer Vison Transformer with reg & dropout
-model = models.VisionTransformer(dropout=0.5,device='cuda',depth=4)
-losses = model.fit(x, y, xv, yv,regularize=True,print_losses=50,eps=100,lr=1E-4,batch_size=32)
+#4 layer Vison Transformer with reg & dropout
+model = models.VisionTransformer(dropout=0.5,device='cuda',depth=4,patch_size=14)
+losses = model.fit(x, y, xv, yv,regularize=True,print_losses=1,eps=50,lr=1E-5,batch_size=32)
 models.plot_loss(losses,title='4 layer Vison Transformer, w/ Reg&dropout')
-print('4 layer Vison Transformer')
+print('Vison Transformer')
 k = 100
 a = []
 for i in range(0,x.shape[0]-k, k):
@@ -192,17 +192,17 @@ print('Validation Accuracy:', a)
 print('Test(custom dataset) Accuracy:',models.accuracy(yt,model.predict(xt)))
 '''
 Epoch 1 :
-      Training loss: 1.8944589164098105 , Evaluation loss: 1.7442543365252323
+      Training loss: 1.6465816840489707 , Evaluation loss: 1.5319998199358964
 Epoch 50 :
-      Training loss: 1.5390328121185304 , Evaluation loss: 1.527704186928578
+      Training loss: 1.4974361883163452 , Evaluation loss: 1.4868688782056172
 Epoch 100 :
-      Training loss: 1.5146786278406779 , Evaluation loss: 1.5147876407091434
+      Training loss: 1.4819398591995239 , Evaluation loss: 1.4781510864312832
 Observations:
   The model is too complex to converge in 100 epochs...
   Reported accuracy statistics:
-    4 layer Vison Transformer
-    Train Accuracy: tensor(0.9691)
-    Validation Accuracy: tensor(0.9515)
-    Test(custom dataset) Accuracy: tensor(0.3800)
+    Vison Transformer
+    Train Accuracy: tensor(0.9906)
+    Validation Accuracy: tensor(0.9838)
+    Test(custom dataset) Accuracy: tensor(0.6800)
 '''
 #%%
