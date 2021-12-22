@@ -9,7 +9,7 @@
     <li><a href="https://github.com/AgamChopra/MNIST/tree/main/my_numbers">my_numbers</a>: File containing my handdrawn digits [0,9].
 </ul>
 <p align="center">
-    <img width="550" height="80" src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/stats.PNG?raw=true">
+    <img width="680" height="80" src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/stats_.PNG?raw=true">
     <br><i>Fig 1. Observed Accuracy after 100 Iterations.</i><br><br>
     <img width="280" height="200"
         src="https://github.com/AgamChopra/MNIST/blob/main/misc_imgs/NN_1_neuron.png?raw=true">
